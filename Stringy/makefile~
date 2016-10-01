@@ -1,0 +1,5 @@
+strtest: stringy.c strtest
+	gcc stringy.c -o strtest
+	./strtest
+run: strtest
+	./strtest

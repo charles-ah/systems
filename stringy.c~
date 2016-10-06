@@ -32,7 +32,9 @@ int main()
   printf("my strcmp: %d\n",mystrcmp(s6,s7));
   printf("library strcmp: %d\n",strcmp(s6,s7));
   char s8[] = "my cat";
+  char s9[] = "my cat";
   printf("my strchr: %s\n",mystrchr(s8,'c'));
+  printf("library strchr: %s\n",strchr(s8,'c'));
   return 0;
 }
 
@@ -104,14 +106,22 @@ int mystrcmp( char *s1, char *s2 )
     {
       for(i=0;i<mystrlen(s2);i++)
 	{
-	  n += *(s1+i) - *(s2+i);
+	  n = *(s1+i) - *(s2+i);
+	  if(n!=0)
+	    {
+	      return n;
+	    }
 	}
     }
   if(mystrlen(s2)>=mystrlen(s1))
     {
       for(i=0;i<mystrlen(s1);i++)
 	{
-	  n += *(s1+i) - *(s2+i);
+	  n = *(s1+i) - *(s2+i);
+	  if(n!=0)
+	    {
+	      return n;
+	    }
 	}
     }
   
